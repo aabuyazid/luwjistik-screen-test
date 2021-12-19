@@ -2,7 +2,7 @@ import requests
 from requests.auth import HTTPBasicAuth
 from random import randint
 
-BASE = "http://127.0.0.1:5000/"
+BASE = "https://luwjistik-screen-test.herokuapp.com/"
 
 orders = {
     'john': [
