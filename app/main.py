@@ -1,6 +1,6 @@
 import sys
 from sys import maxsize
-from flask import Flask, Request, g
+from flask import Flask, Request, g, jsonify
 from flask_restful import Api, Resource, reqparse, abort, fields, marshal_with
 from flask_sqlalchemy import SQLAlchemy
 from flask_httpauth import HTTPBasicAuth
@@ -128,7 +128,13 @@ class Order(Resource):
 
         return result
 
+class Home(Resource):
+    def get(self):
+        print('Hello Luwjistik!')
+        return jsonify('Hello Luwjistik!')
+
 api.add_resource(Order, "/order", "/order/<int:order_id>")
+api.add_resource(Home, '/')
 
 if __name__ == "__main__":
     app.run(debug=DEBUG)
