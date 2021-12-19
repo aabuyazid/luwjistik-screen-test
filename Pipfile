@@ -17,6 +17,7 @@ Jinja2 = "==2.11.2"
 MarkupSafe = "==1.1.1"
 SQLAlchemy = "==1.3.18"
 gunicorn = "*"
+flask-httpauth = "*"
 
 [dev-packages]
 
