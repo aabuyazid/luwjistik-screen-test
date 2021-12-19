@@ -66,10 +66,11 @@ if not os.path.isfile('./database.db'):
     db.create_all()
     for u in users:
         username, password = u
-        user = User(username = username)
-        user.hash_password(password)
-        db.session.add(user)
-        db.session.commit()
+        if not User.query.filter_by(username = username).first():
+            user = User(username = username)
+            user.hash_password(password)
+            db.session.add(user)
+            db.session.commit()
 
 
 order_post_args = reqparse.RequestParser()
